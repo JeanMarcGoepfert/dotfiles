@@ -29,6 +29,15 @@ set colorcolumn=+1
 set list listchars=tab:»·,trail:·,nbsp:·
 set viminfo^=%
 
+let g:user_emmet_leader_key='<C-E>'
+
+" syntastic settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 " Return to last edit position when opening files (You want this!)
 autocmd BufReadPost *
    \ if line("'\"") > 0 && line("'\"") <= line("$") |
