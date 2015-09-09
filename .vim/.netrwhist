@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/Users/jeanmarcgoepfert/Develop/projects/learning/rails/address-book/public/src/app'
-let g:netrw_dirhist_2='/Users/jeanmarcgoepfert/Develop/projects/learning/rails/address-book/public/src/app/scripts'
-let g:netrw_dirhist_3='/Users/jeanmarcgoepfert/Desktop/flux-getting-started'
-let g:netrw_dirhist_4='/Users/jeanmarcgoepfert/Desktop/flux-getting-started/public'

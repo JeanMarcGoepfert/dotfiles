@@ -1,4 +1,25 @@
-execute pathogen#infect()
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Quick start:
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+" run :PluginInstall to install or vim +PluginInstall +qall from command line
+Plugin 'kien/ctrlp.vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'itchyny/lightline.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mileszs/ack.vim'
+Plugin 'Raimondi/delimitMate'
+Plugin 'othree/html5.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'altercation/vim-colors-solarized'
+
+call vundle#end()
+filetype plugin indent on
+
 syntax enable
 syntax on
 colorscheme solarized
@@ -11,9 +32,6 @@ set history=50
 set statusline+=%F
 set laststatus=2
 set background=dark
-set ruler
-set number
-set numberwidth=4
 set showcmd
 set incsearch
 set laststatus=2
@@ -26,10 +44,23 @@ set shiftwidth=2
 set smarttab
 set textwidth=80
 set colorcolumn=+1
-set list listchars=tab:»·,trail:·,nbsp:·
 set viminfo^=%
+set modelines=0
+set ttyfast
+set scrolloff=5
+
+" hard mode
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
+let g:NERDTreeDirArrows=0
 
 let g:user_emmet_leader_key='<C-E>'
+
+autocmd InsertEnter * set cul
+autocmd InsertLeave * set nocul
 
 " syntastic settings
 set statusline+=%#warningmsg#
@@ -43,8 +74,6 @@ autocmd BufReadPost *
    \ if line("'\"") > 0 && line("'\"") <= line("$") |
    \   exe "normal! g`\"" |
    \ endif
-
-filetype plugin indent on
 
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
