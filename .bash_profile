@@ -51,67 +51,9 @@ elif [[ "$USER" == "root" ]]; then
     style_user="\[${BOLD}${SOLAR_RED}\]"
 fi
 
-is_git_repo() {
-    $(git rev-parse --is-inside-work-tree &> /dev/null)
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
-
-is_git_dir() {
-    $(git rev-parse --is-inside-git-dir 2> /dev/null)
-}
-
-get_git_branch() {
-    local branch_name
-
-    # Get the short symbolic ref
-    branch_name=$(git symbolic-ref --quiet --short HEAD 2> /dev/null) ||
-    # If HEAD isn't a symbolic ref, get the short SHA
-    branch_name=$(git rev-parse --short HEAD 2> /dev/null) ||
-    # Otherwise, just give up
-    branch_name="(unknown)"
-
-    printf $branch_name
-}
-
-# Git status information
-prompt_git() {
-    local git_info git_state uc us ut st
-
-    if ! is_git_repo || is_git_dir; then
-        return 1
-    fi
-
-    git_info=$(get_git_branch)
-
-    # Check for uncommitted changes in the index
-    if ! $(git diff --quiet --ignore-submodules --cached); then
-        uc="+"
-    fi
-
-    # Check for unstaged changes
-    if ! $(git diff-files --quiet --ignore-submodules --); then
-        us="!"
-    fi
-
-    # Check for untracked files
-    if [ -n "$(git ls-files --others --exclude-standard)" ]; then
-        ut="?"
-    fi
-
-    # Check for stashed files
-    if $(git rev-parse --verify refs/stash &>/dev/null); then
-        st="$"
-    fi
-
-    git_state=$uc$us$ut$st
-
-    # Combine the branch name and state information
-    if [[ $git_state ]]; then
-        git_info="$git_info[$git_state]"
-    fi
-
-    printf "${SOLAR_WHITE} on ${style_branch}${git_info}"
-}
-
 
 # Set the terminal title to the current working directory
 PS1="\[\033]0;\w\007\]"
@@ -121,15 +63,9 @@ PS1+="${style_chars}@" # @
 #PS1+="${style_host}\h" # Host
 PS1+="${style_chars}: " # :
 PS1+="${style_path}\w" # Working directory
-PS1+="\$(prompt_git)" # Git details
+PS1+="\${style_branch}\$(parse_git_branch)" # Git details
 PS1+="\n" # Newline
 PS1+="${style_chars}\$ \[${RESET}\]" # $ (and reset color)
 
-
-cdls() { cd $1; ls; }
-
-alias 2p='cd ~/Develop/projects/'
-alias 2l='cd ~/Develop/projects/learning'
-alias 2r='cd ~/Develop/projects/learning/rails'
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
