@@ -6,16 +6,25 @@ call vundle#begin()
 " Quick start:
 " git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 " run :PluginInstall to install or vim +PluginInstall +qall from command line
+
+" Quick start:
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+" run :PluginInstall to install or vim +PluginInstall +qall from command line
 Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mileszs/ack.vim'
-Plugin 'Raimondi/delimitMate'
+"Plugin 'Raimondi/delimitMate'
 Plugin 'othree/html5.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'guns/vim-clojure-highlight'
+Plugin 'guns/vim-clojure-static'
+Plugin 'tpope/vim-fireplace'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'vim-scripts/paredit.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -23,6 +32,32 @@ filetype plugin indent on
 syntax enable
 syntax on
 colorscheme solarized
+
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+
+let g:rbpt_colorpairs = [
+      \ ['brown',       'RoyalBlue3'],
+      \ ['Darkblue',    'SeaGreen3'],
+      \ ['darkgray',    'DarkOrchid3'],
+      \ ['darkgreen',   'firebrick3'],
+      \ ['darkcyan',    'RoyalBlue3'],
+      \ ['darkred',     'SeaGreen3'],
+      \ ['darkmagenta', 'DarkOrchid3'],
+      \ ['brown',       'firebrick3'],
+      \ ['Darkblue',    'firebrick3'],
+      \ ['gray',        'RoyalBlue3'],
+      \ ['black',       'SeaGreen3'],
+      \ ['darkmagenta', 'DarkOrchid3'],
+      \ ['darkgreen',   'RoyalBlue3'],
+      \ ['darkcyan',    'SeaGreen3'],
+      \ ['darkred',     'DarkOrchid3'],
+      \ ['red',         'firebrick3'],
+      \ ['gray',        'RoyalBlue3'],
+      \ ]
+
+let g:rbpt_max = 16
+let g:rbpt_loadcmd_toggle = 0
 
 set backspace=2
 set nobackup
