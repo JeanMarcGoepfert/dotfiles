@@ -10,8 +10,7 @@ call vundle#begin()
 " Quick start:
 " git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 " run :PluginInstall to install or vim +PluginInstall +qall from command line
-Plugin 'kien/ctrlp.vim'
-Plugin 'mattn/emmet-vim'
+Plugin 'rking/ag.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'pangloss/vim-javascript'
@@ -25,6 +24,7 @@ Plugin 'guns/vim-clojure-static'
 Plugin 'tpope/vim-fireplace'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'vim-scripts/paredit.vim'
+Plugin 'mxw/vim-jsx'
 
 call vundle#end()
 filetype plugin indent on
@@ -83,6 +83,11 @@ set viminfo^=%
 set modelines=0
 set ttyfast
 set scrolloff=5
+set ignorecase
+set smartcase
+
+set rtp+=~/.fzf
+map <silent> <C-p> :FZF<CR>
 
 " hard mode
 noremap <Up> <NOP>
@@ -121,12 +126,6 @@ command NT NERDTree
 autocmd BufWritePre * :%s/\s\+$//e
 
 let javascript_enable_domhtmlcss = 1
-
-" Ignore some folders and files for CtrlP indexing
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$',
-  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
-  \ }
 
 let g:lightline = {
   \ 'colorscheme': 'solarized'
