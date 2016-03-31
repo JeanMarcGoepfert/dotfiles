@@ -67,5 +67,8 @@ PS1+="\${style_branch}\$(parse_git_branch)" # Git details
 PS1+="\n" # Newline
 PS1+="${style_chars}\$ \[${RESET}\]" # $ (and reset color)
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Setting ag as the default source for fzf
+export FZF_DEFAULT_COMMAND='ag -g ""'
+
