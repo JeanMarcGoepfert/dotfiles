@@ -18,6 +18,10 @@ if [ -e /usr/share/terminfo/x/xterm-256color ]; then
     export TERM='xterm-256color'
 fi
 
+if [ -d "$HOME/bin" ] ; then
+    PATH="$PATH:$HOME/bin"
+fi
+
 tput sgr 0 0
 
 # Base styles and color palette
@@ -71,4 +75,3 @@ PS1+="${style_chars}\$ \[${RESET}\]" # $ (and reset color)
 
 # Setting ag as the default source for fzf
 export FZF_DEFAULT_COMMAND='ag -g ""'
-
