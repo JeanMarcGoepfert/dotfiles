@@ -66,6 +66,7 @@ let g:rbpt_colorpairs = [
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
 
+set number
 set backspace=2
 set nobackup
 set nowritebackup
