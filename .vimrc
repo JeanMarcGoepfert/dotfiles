@@ -3,20 +3,6 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" Quick start:
-" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-" run :PluginInstall to install or vim +PluginInstall +qall from command line
-
-" To get fzf fuzzy finder: 
-" git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-" ~/.fzf/install
-
-" To get silver searcher: 
-" sudo apt-get install silversearcher-ag
-
-" Quick start:
-" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-" run :PluginInstall to install or vim +PluginInstall +qall from command line
 Plugin 'rking/ag.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'scrooloose/syntastic'
