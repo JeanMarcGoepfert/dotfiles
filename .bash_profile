@@ -71,7 +71,10 @@ PS1+="\${style_branch}\$(parse_git_branch)" # Git details
 PS1+="\n" # Newline
 PS1+="${style_chars}\$ \[${RESET}\]" # $ (and reset color)
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# Set vim to default editor
+export VISUAL=vim
+export EDITOR="$VISUAL"
 
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 # Setting ag as the default source for fzf
 export FZF_DEFAULT_COMMAND='ag -g ""'
