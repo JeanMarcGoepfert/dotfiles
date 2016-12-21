@@ -91,8 +91,6 @@ noremap <Right> <NOP>
 
 let g:NERDTreeDirArrows=0
 
-let g:user_emmet_leader_key='<C-E>'
-
 autocmd InsertEnter * set cul
 autocmd InsertLeave * set nocul
 
