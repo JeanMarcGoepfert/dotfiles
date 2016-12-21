@@ -10,6 +10,10 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$PATH:$HOME/bin"
 fi
 
+if [ -f ~/.bashrc ]; then
+   source ~/.bashrc
+fi
+
 tput sgr 0 0
 
 # Base styles and color palette
