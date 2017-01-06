@@ -7,7 +7,6 @@ Plugin 'rking/ag.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'pangloss/vim-javascript'
-"Plugin 'Raimondi/delimitMate'
 Plugin 'othree/html5.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'altercation/vim-colors-solarized'
@@ -80,15 +79,22 @@ set ignorecase
 set smartcase
 
 set rtp+=~/.fzf
-map <silent> <C-p> :FZF<CR>
-
-" hard mode
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
 
 let g:NERDTreeDirArrows=0
+let mapleader = "\<Space>"
+
+nnoremap <Leader>f :NERDTreeFind<CR>
+nnoremap <Leader>h <C-w>h
+nnoremap <Leader>j <C-w>j
+nnoremap <Leader>k <C-w>k
+nnoremap <Leader>l <C-w>l
+nnoremap <Leader>n :NERDTree<CR>
+nnoremap <Leader>p :FZF<CR>
+nnoremap <Leader>q :q<CR>
+nnoremap <Leader>r :redo<CR>
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>v :vs<CR>
+nnoremap <Leader>s :sp<CR>
 
 autocmd InsertEnter * set cul
 autocmd InsertLeave * set nocul
@@ -100,23 +106,16 @@ set statusline+=%*
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" Return to last edit position when opening files (You want this!)
+" Return to last edit position when opening files
 autocmd BufReadPost *
    \ if line("'\"") > 0 && line("'\"") <= line("$") |
    \   exe "normal! g`\"" |
    \ endif
 
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-
 inoremap jk <esc>
 inoremap jK <esc>
 inoremap Jk <esc>
 inoremap JK <esc>
-
-command NT NERDTree
 
 "remove trailing white space
 autocmd BufWritePre * :%s/\s\+$//e
@@ -141,3 +140,14 @@ function! InsertTabWrapper()
 endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <S-Tab> <c-n>
+
+" vp doesn't replace paste buffer
+function! RestoreRegister()
+  let @" = s:restore_reg
+  return ''
+endfunction
+function! s:Repl()
+  let s:restore_reg = @"
+  return "p@=RestoreRegister()\<cr>"
+endfunction
+vmap <silent> <expr> p <sid>Repl()
