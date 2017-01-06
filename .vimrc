@@ -16,6 +16,7 @@ Plugin 'tpope/vim-fireplace'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'vim-scripts/paredit.vim'
 Plugin 'mxw/vim-jsx'
+Plugin 'Raimondi/delimitMate'
 
 call vundle#end()
 filetype plugin indent on
