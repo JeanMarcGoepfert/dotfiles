@@ -96,8 +96,8 @@
  nnoremap <Leader>q :q<CR>
  nnoremap <Leader>r :redo<CR>
  nnoremap <Leader>w :w<CR>
- nnoremap <Leader>v :vs<CR>
- nnoremap <Leader>s :sp<CR>
+ nnoremap <Leader>s :vs<CR>
+ nnoremap <Leader>v :sp<CR>
 
  autocmd InsertEnter * set cul
  autocmd InsertLeave * set nocul
