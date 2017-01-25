@@ -17,6 +17,7 @@
  Plugin 'vim-scripts/paredit.vim'
  Plugin 'mxw/vim-jsx'
  Plugin 'Raimondi/delimitMate'
+ Plugin 'easymotion/vim-easymotion'
 
  call vundle#end()
  filetype plugin indent on
@@ -98,6 +99,7 @@
  nnoremap <Leader>w :w<CR>
  nnoremap <Leader>s :vs<CR>
  nnoremap <Leader>v :sp<CR>
+ nnoremap <Leader>b :b#<CR>
 
  autocmd InsertEnter * set cul
  autocmd InsertLeave * set nocul
