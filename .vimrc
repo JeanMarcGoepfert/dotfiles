@@ -99,7 +99,8 @@
  nnoremap <Leader>w :w<CR>
  nnoremap <Leader>s :vs<CR>
  nnoremap <Leader>v :sp<CR>
- nnoremap <Leader>b :b#<CR>
+ nnoremap <Leader>b :bprevious<CR>
+ nnoremap <Leader>n :bnext<CR>
 
  autocmd InsertEnter * set cul
  autocmd InsertLeave * set nocul
