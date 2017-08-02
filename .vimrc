@@ -79,6 +79,7 @@
  set scrolloff=5
  set ignorecase
  set smartcase
+ set showmatch
 
  set rtp+=~/.fzf
 
