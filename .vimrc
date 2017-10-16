@@ -5,7 +5,7 @@
 
  Plugin 'rking/ag.vim'
  Plugin 'itchyny/lightline.vim'
- Plugin 'scrooloose/syntastic'
+ Plugin 'vim-syntastic/syntastic'
  Plugin 'pangloss/vim-javascript'
  Plugin 'othree/html5.vim'
  Plugin 'scrooloose/nerdtree'
