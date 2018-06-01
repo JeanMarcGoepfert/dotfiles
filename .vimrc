@@ -5,7 +5,6 @@
 
  Plugin 'rking/ag.vim'
  Plugin 'itchyny/lightline.vim'
- Plugin 'vim-syntastic/syntastic'
  Plugin 'pangloss/vim-javascript'
  Plugin 'othree/html5.vim'
  Plugin 'scrooloose/nerdtree'
@@ -18,6 +17,8 @@
  Plugin 'mxw/vim-jsx'
  Plugin 'Raimondi/delimitMate'
  Plugin 'easymotion/vim-easymotion'
+ Plugin 'w0rp/ale'
+ Plugin 'ElmCast/elm-vim'
 
  call vundle#end()
  filetype plugin indent on
