@@ -37,7 +37,7 @@ colorscheme solarized
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 
-let g:UltiSnipsSnippetDirectories = ['~/.config/nvim/UltiSni
+let g:UltiSnipsSnippetDirectories = ['~/.config/nvim/UltiSnips', 'UltiSnips']
 let g:deoplete#enable_at_startup = 1 "NVIM ONLY
 
 let g:rbpt_colorpairs = [
