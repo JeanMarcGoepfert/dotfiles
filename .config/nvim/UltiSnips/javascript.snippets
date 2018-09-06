@@ -1,0 +1,56 @@
+snippet{constre"require a module" b
+const ${1} = require('${2}')
+endsnippet
+
+snippet constf "assign anonymous function to a const" b
+const ${1} = (${2}) => {
+  return ${3}
+}
+endsnippet
+
+snippet actionCreator "declare an action creator" b
+const ${1} = (${2}) => (getState, dispatch) => {
+  ${3}
+}
+endsnippet
+
+snippet dispatch "dispatch an event" b
+dispatch({type: ${1}})
+endsnippet
+
+snippet context "declare test context" b
+context('${1}', () => {
+  ${2}
+})
+endsnippet
+
+snippet before "declare test before block" b
+before(() => {
+  ${2}
+})
+endsnippet
+
+snippet it "declare it test expectation" b
+it('${1}', () => {
+  ${2}
+})
+endsnippet
+
+snippet console "console log" b
+console.log('${1}', $1)
+endsnippet
+
+snippet if "if" b
+if (${1}) {
+  ${2}
+}
+endsnippet
+
+snippet import "es6 import" b
+import ${1} from '${2}'
+endsnippet
+
+snippet el "html js tag" b
+<${1:div}>
+</$1>
+endsnippet
