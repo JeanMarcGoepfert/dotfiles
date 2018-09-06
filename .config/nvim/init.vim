@@ -22,6 +22,7 @@ Plugin 'SirVer/ultisnips'
 call vundle#end()
 
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#auto_complete_delay = 20
 
 " deoplete tab to cycle
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
@@ -36,7 +37,7 @@ colorscheme solarized
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 
-let g:UltiSnipsSnippetDirectories = ['~/.config/nvim/UltiSnips', 'UltiSnips']
+let g:UltiSnipsSnippetDirectories = ['~/.config/nvim/UltiSni
 let g:deoplete#enable_at_startup = 1 "NVIM ONLY
 
 let g:rbpt_colorpairs = [
@@ -90,6 +91,7 @@ set scrolloff=5
 set ignorecase
 set smartcase
 set showmatch
+set nohlsearch
 
 set rtp+=~/.fzf
 
