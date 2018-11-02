@@ -1,4 +1,4 @@
-set nocompatible
+set nocompatiblebundle/Vundle.vim
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -19,6 +19,9 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'w0rp/ale'
 Plugin 'Shougo/deoplete.nvim'
 Plugin 'SirVer/ultisnips'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'sbdchd/neoformat'
+Plugin 'elixir-editors/vim-elixir'
 call vundle#end()
 
 let g:deoplete#enable_at_startup = 1
@@ -96,6 +99,7 @@ set nohlsearch
 set rtp+=~/.fzf
 
 let g:NERDTreeDirArrows=0
+let NERDTreeShowHidden=1
 
 let mapleader = "\<Space>"
 let paredit_leader = ","
@@ -159,3 +163,5 @@ function! s:Repl()
   return "p@=RestoreRegister()\<cr>"
 endfunction
 vmap <silent> <expr> p <sid>Repl()
+
+command P Neoformat
