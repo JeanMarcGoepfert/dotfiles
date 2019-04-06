@@ -22,6 +22,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'sbdchd/neoformat'
 Plugin 'elixir-editors/vim-elixir'
+Plugin 'fatih/vim-go'
 call vundle#end()
 
 let g:deoplete#enable_at_startup = 1
