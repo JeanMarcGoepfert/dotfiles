@@ -15,3 +15,7 @@
 `sudo apt-get install silversearcher-ag`
 
 or `brew install the_silver_searcher` on mac
+
+### Install binaries for vim-go
+
+`:GoInstallBinaries`
