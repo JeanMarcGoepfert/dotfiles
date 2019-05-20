@@ -70,3 +70,6 @@ export EDITOR="$VISUAL"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 # Setting ag as the default source for fzf
 export FZF_DEFAULT_COMMAND='ag -g ""'
+
+export GOPATH=~/go
+export GOBIN=~/go/bin
