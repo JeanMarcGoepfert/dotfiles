@@ -3,6 +3,7 @@ filetype off
 
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'rking/ag.vim'
+Plug 'junegunn/fzf'
 Plug 'itchyny/lightline.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'othree/html5.vim'
@@ -15,12 +16,14 @@ Plug 'mxw/vim-jsx'
 Plug 'Raimondi/delimitMate'
 Plug 'easymotion/vim-easymotion'
 Plug 'leafgarland/typescript-vim'
-Plug 'sbdchd/neoformat'
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
-Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+Plug 'sbdchd/neoformat', "install prettier globally if you want js
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'burner/vim-svelte'
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
 let g:go_fmt_command = "goimports"
@@ -69,8 +72,11 @@ set updatetime=300
 set shortmess+=c
 set rtp+=~/.fzf
 set shell=/bin/sh
+set foldmethod=indent
 
 let javascript_enable_domhtmlcss = 1
+
+let g:rustfmt_autosave = 1
 
 let g:NERDTreeDirArrows=0
 let NERDTreeShowHidden=1
@@ -144,4 +150,18 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+" Keep all folds open when a file is opened
+"augroup OpenAllFoldsOnFileOpen
+"    autocmd!
+"    autocmd BufRead * normal zR
+"augroup END
+
+set nofoldenable
+
 command P Neoformat
+
+" cp to copy current path
+:nmap cp :let @+ = expand("%")<cr>
+
+syntax on
+autocmd! bufreadpost *.md set syntax=off
