@@ -1,8 +1,10 @@
 {
   "LuaSnip": { "branch": "master", "commit": "ba3ea5bcfd969679f38fefb1bc801cd45524045b" },
   "ag.vim": { "branch": "master", "commit": "4a0dd6e190f446e5a016b44fdaa2feafc582918e" },
+  "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "39e2eda76828d88b773cc27a3f61d2ad782c922d" },
   "delimitMate": { "branch": "master", "commit": "537a1da0fa5eeb88640425c37e545af933c56e1b" },
+  "elixir-ls": { "branch": "master", "commit": "0b9fec1398d340d2bd7a8543bfb423d6b087b3a2" },
   "fzf": { "branch": "master", "commit": "0420ed4f2a7edcc7f91dc233665f914ce023b7b3" },
   "html5.vim": { "branch": "master", "commit": "485f2cd62162c81e56d8604b4c630f0b5ef69d1f" },
   "lazy.nvim": { "branch": "main", "commit": "69041bccb70f68408633e93ed33012ee18889bb0" },
@@ -14,6 +16,7 @@
   "nerdtree": { "branch": "master", "commit": "fbb71fcd90602e3ec77f40b864b5f9b437c496c5" },
   "nvim-cmp": { "branch": "main", "commit": "a110e12d0b58eefcf5b771f533fc2cf3050680ac" },
   "nvim-lspconfig": { "branch": "master", "commit": "9c9eb07fecc578e25e28db8dc9002b43fff2ed79" },
+  "nvim-treesitter": { "branch": "master", "commit": "7ff0b8d3d21b15eb7231fcbd2acfded8987f5efd" },
   "typescript-vim": { "branch": "master", "commit": "8d169e16b5487771f6568125d4c63e6086e524d9" },
   "vim-easymotion": { "branch": "master", "commit": "b3cfab2a6302b3b39f53d9fd2cd997e1127d7878" },
   "vim-javascript": { "branch": "master", "commit": "c470ce1399a544fe587eab950f571c83cccfbbdc" },
