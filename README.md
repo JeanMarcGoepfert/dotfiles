@@ -13,3 +13,7 @@ or `brew install the_silver_searcher` on mac
 ### Install binaries for vim-go
 
 `:GoInstallBinaries`
+
+### Update nvim plugins
+
+:Lazy update
