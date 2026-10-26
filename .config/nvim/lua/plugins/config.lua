@@ -18,19 +18,16 @@ lsp_zero.on_attach(function(client, bufnr)
 end)
 
 
-local lsp_config = require('lspconfig'),
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = { "tsserver", "elixirls", "gopls" },
-  handlers = {
-    function(server_name)
-      lsp_config[server_name].setup({})
-    end,
-    require('lspconfig').elixirls.setup{
-      cmd = { "~/.local/share/nvim/mason/packages/elixir-ls/language_server.sh" };
-    }
-  },
+  ensure_installed = { "ts_ls", "elixirls", "gopls" },
 })
+
+vim.lsp.config('elixirls', {
+  cmd = { vim.fn.expand('~/.local/share/nvim/mason/packages/elixir-ls/language_server.sh') },
+})
+
+vim.lsp.enable({ "ts_ls", "elixirls", "gopls" })
 
 require('nvim-treesitter.configs').setup({
   ensure_installed = { "lua" },
